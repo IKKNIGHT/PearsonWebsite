@@ -18,11 +18,11 @@ import {
 
 const tutors = [
   {
-    name: "Sarah Chen",
+    name: "Pearson Skibidy",
     subjects: ["AP Chemistry", "AP Biology"],
     score: "5, 5",
     description:
-      "Stanford biochemistry student with 3 years tutoring experience",
+      "A bum with 0 years of experience",
     avatar: "SC",
   },
   {
