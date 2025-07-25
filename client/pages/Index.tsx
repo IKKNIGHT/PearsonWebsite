@@ -225,7 +225,7 @@ export default function Index() {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-50">
           <ChevronDown className="h-8 w-8 text-muted-foreground" />
         </div>
       </section>
