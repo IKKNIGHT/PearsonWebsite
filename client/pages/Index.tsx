@@ -195,7 +195,7 @@ export default function Index() {
               Join thousands of students getting free, expert AP exam
               preparation from top-scoring tutors
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row justify-center items-center space-x-4">
               <Button
                 size="lg"
                 className="text-lg px-8 py-6 group"
