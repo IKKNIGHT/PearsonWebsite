@@ -331,19 +331,19 @@ export default function Index() {
             </Button>
             <Button
               size="lg"
-              variant="outline"
-              className="text-lg px-8 py-6 border-white text-white hover:bg-white hover:text-primary"
-              onClick={() =>
-                window.open(
-                  "https://www.instagram.com/seoul.pearson/?hl=en",
-                  "_blank",
-                )
-              }
+              variant="secondary"
+                className="text-lg px-8 py-6 group bg-white text-primary hover:bg-gray-100"
+                onClick={() =>
+                  window.open(
+                    "https://www.instagram.com/seoul.pearson/?hl=en",
+                    "_blank",
+                  )
+                }
             >
-              <Instagram className="mr-2 h-5 w-5" />
-              Follow Updates
-              <ExternalLink className="ml-2 h-4 w-4" />
-            </Button>
+  <Instagram className="mr-2 h-5 w-5 group-hover:animate-pulse" />
+  Follow Updates
+  <ExternalLink className="ml-2 h-4 w-4" />
+</Button>
           </div>
         </div>
       </section>
@@ -378,7 +378,7 @@ export default function Index() {
             </a>
           </div>
           <p className="text-sm text-muted-foreground">
-            © 2024 Pearson's AP Discord Server. Made with ❤️ for students, by
+            © 2025 Pearson's AP Discord Server. Made with ❤️ for students, by
             students.
           </p>
         </div>
