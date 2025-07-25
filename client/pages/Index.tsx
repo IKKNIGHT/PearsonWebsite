@@ -23,7 +23,7 @@ const tutors = [
     score: "5, 5",
     description:
       "A bum with 0 years of experience",
-    avatar: "SC",
+    avatar: "PS",
   },
   {
     name: "Marcus Johnson",
