@@ -2,18 +2,18 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { 
-  BookOpen, 
-  Users, 
-  Trophy, 
-  Star, 
-  Calendar, 
-  MessageSquare, 
+import {
+  BookOpen,
+  Users,
+  Trophy,
+  Star,
+  Calendar,
+  MessageSquare,
   Instagram,
   ExternalLink,
   ChevronDown,
   Menu,
-  X
+  X,
 } from "lucide-react";
 
 const tutors = [
@@ -21,53 +21,54 @@ const tutors = [
     name: "Sarah Chen",
     subjects: ["AP Chemistry", "AP Biology"],
     score: "5, 5",
-    description: "Stanford biochemistry student with 3 years tutoring experience",
-    avatar: "SC"
+    description:
+      "Stanford biochemistry student with 3 years tutoring experience",
+    avatar: "SC",
   },
   {
     name: "Marcus Johnson",
     subjects: ["AP Calculus AB/BC", "AP Physics"],
     score: "5, 5",
     description: "MIT engineering student, math competition winner",
-    avatar: "MJ"
+    avatar: "MJ",
   },
   {
     name: "Elena Rodriguez",
     subjects: ["AP English Lit", "AP World History"],
     score: "5, 5",
     description: "Harvard English major, published writer",
-    avatar: "ER"
+    avatar: "ER",
   },
   {
     name: "David Kim",
     subjects: ["AP Computer Science", "AP Statistics"],
     score: "5, 5",
     description: "Carnegie Mellon CS student, coding bootcamp instructor",
-    avatar: "DK"
-  }
+    avatar: "DK",
+  },
 ];
 
 const features = [
   {
     icon: Users,
     title: "Expert Tutors",
-    description: "Learn from students who scored perfect 5s on their AP exams"
+    description: "Learn from students who scored perfect 5s on their AP exams",
   },
   {
     icon: Calendar,
     title: "Flexible Scheduling",
-    description: "Study sessions available 7 days a week to fit your schedule"
+    description: "Study sessions available 7 days a week to fit your schedule",
   },
   {
     icon: BookOpen,
     title: "All Subjects",
-    description: "Comprehensive support across 20+ AP subjects"
+    description: "Comprehensive support across 20+ AP subjects",
   },
   {
     icon: Trophy,
     title: "Proven Results",
-    description: "95% of our students improve their practice test scores"
-  }
+    description: "95% of our students improve their practice test scores",
+  },
 ];
 
 export default function Index() {
@@ -78,14 +79,14 @@ export default function Index() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
       setIsMenuOpen(false);
     }
   };
@@ -93,36 +94,38 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-background/80 backdrop-blur-md border-b' : 'bg-transparent'
-      }`}>
+      <nav
+        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+          scrolled
+            ? "bg-background/80 backdrop-blur-md border-b"
+            : "bg-transparent"
+        }`}
+      >
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-          <div className="font-bold text-xl text-primary">
-            Pearson's AP
-          </div>
-          
+          <div className="font-bold text-xl text-primary">Pearson's AP</div>
+
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <button 
-              onClick={() => scrollToSection('hero')}
+            <button
+              onClick={() => scrollToSection("hero")}
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
               Home
             </button>
-            <button 
-              onClick={() => scrollToSection('features')}
+            <button
+              onClick={() => scrollToSection("features")}
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
               Features
             </button>
-            <button 
-              onClick={() => scrollToSection('tutors')}
+            <button
+              onClick={() => scrollToSection("tutors")}
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
               Tutors
             </button>
-            <button 
-              onClick={() => scrollToSection('join')}
+            <button
+              onClick={() => scrollToSection("join")}
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
               Join
@@ -130,7 +133,7 @@ export default function Index() {
           </div>
 
           {/* Mobile Menu Button */}
-          <button 
+          <button
             className="md:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
@@ -142,26 +145,26 @@ export default function Index() {
         {isMenuOpen && (
           <div className="md:hidden bg-background border-b">
             <div className="container mx-auto px-4 py-4 space-y-4">
-              <button 
-                onClick={() => scrollToSection('hero')}
+              <button
+                onClick={() => scrollToSection("hero")}
                 className="block text-muted-foreground hover:text-foreground transition-colors"
               >
                 Home
               </button>
-              <button 
-                onClick={() => scrollToSection('features')}
+              <button
+                onClick={() => scrollToSection("features")}
                 className="block text-muted-foreground hover:text-foreground transition-colors"
               >
                 Features
               </button>
-              <button 
-                onClick={() => scrollToSection('tutors')}
+              <button
+                onClick={() => scrollToSection("tutors")}
                 className="block text-muted-foreground hover:text-foreground transition-colors"
               >
                 Tutors
               </button>
-              <button 
-                onClick={() => scrollToSection('join')}
+              <button
+                onClick={() => scrollToSection("join")}
                 className="block text-muted-foreground hover:text-foreground transition-colors"
               >
                 Join
@@ -172,7 +175,10 @@ export default function Index() {
       </nav>
 
       {/* Hero Section */}
-      <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      <section
+        id="hero"
+        className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      >
         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-accent/20"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-4xl mx-auto space-y-8 animate-in fade-in-0 duration-1000">
@@ -186,23 +192,31 @@ export default function Index() {
               Discord Server
             </h2>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
-              Join thousands of students getting free, expert AP exam preparation from top-scoring tutors
+              Join thousands of students getting free, expert AP exam
+              preparation from top-scoring tutors
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="text-lg px-8 py-6 group"
-                onClick={() => window.open('https://discord.gg/eYZuc6d3Sf', '_blank')}
+                onClick={() =>
+                  window.open("https://discord.gg/eYZuc6d3Sf", "_blank")
+                }
               >
                 <MessageSquare className="mr-2 h-5 w-5 group-hover:animate-pulse" />
                 Join Discord Server
                 <ExternalLink className="ml-2 h-4 w-4" />
               </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
+              <Button
+                variant="outline"
+                size="lg"
                 className="text-lg px-8 py-6"
-                onClick={() => window.open('https://www.instagram.com/seoul.pearson/?hl=en', '_blank')}
+                onClick={() =>
+                  window.open(
+                    "https://www.instagram.com/seoul.pearson/?hl=en",
+                    "_blank",
+                  )
+                }
               >
                 <Instagram className="mr-2 h-5 w-5" />
                 Follow on Instagram
@@ -224,12 +238,16 @@ export default function Index() {
               Why Choose Our Community?
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Get the support you need to excel in your AP exams with our proven methods and dedicated tutors
+              Get the support you need to excel in your AP exams with our proven
+              methods and dedicated tutors
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
-              <Card key={index} className="p-6 text-center hover:shadow-lg transition-shadow duration-300">
+              <Card
+                key={index}
+                className="p-6 text-center hover:shadow-lg transition-shadow duration-300"
+              >
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <feature.icon className="h-6 w-6 text-primary" />
                 </div>
@@ -249,12 +267,16 @@ export default function Index() {
               Meet Our Expert Tutors
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Learn from students who have mastered their AP exams and are passionate about helping others succeed
+              Learn from students who have mastered their AP exams and are
+              passionate about helping others succeed
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {tutors.map((tutor, index) => (
-              <Card key={index} className="p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-2">
+              <Card
+                key={index}
+                className="p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-2"
+              >
                 <div className="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">
                   {tutor.avatar}
                 </div>
@@ -268,9 +290,13 @@ export default function Index() {
                 </div>
                 <div className="flex items-center justify-center gap-1 mb-3">
                   <Star className="h-4 w-4 text-yellow-500 fill-current" />
-                  <span className="text-sm font-medium">AP Scores: {tutor.score}</span>
+                  <span className="text-sm font-medium">
+                    AP Scores: {tutor.score}
+                  </span>
                 </div>
-                <p className="text-sm text-muted-foreground">{tutor.description}</p>
+                <p className="text-sm text-muted-foreground">
+                  {tutor.description}
+                </p>
               </Card>
             ))}
           </div>
@@ -278,30 +304,41 @@ export default function Index() {
       </section>
 
       {/* CTA Section */}
-      <section id="join" className="py-20 bg-gradient-to-r from-primary to-accent text-white">
+      <section
+        id="join"
+        className="py-20 bg-gradient-to-r from-primary to-accent text-white"
+      >
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Ready to Ace Your AP Exams?
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-            Join our Discord community today and start your journey towards AP success. It's completely free!
+            Join our Discord community today and start your journey towards AP
+            success. It's completely free!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               variant="secondary"
               className="text-lg px-8 py-6 group bg-white text-primary hover:bg-gray-100"
-              onClick={() => window.open('https://discord.gg/eYZuc6d3Sf', '_blank')}
+              onClick={() =>
+                window.open("https://discord.gg/eYZuc6d3Sf", "_blank")
+              }
             >
               <MessageSquare className="mr-2 h-5 w-5 group-hover:animate-pulse" />
               Join Discord Now
               <ExternalLink className="ml-2 h-4 w-4" />
             </Button>
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               variant="outline"
               className="text-lg px-8 py-6 border-white text-white hover:bg-white hover:text-primary"
-              onClick={() => window.open('https://www.instagram.com/seoul.pearson/?hl=en', '_blank')}
+              onClick={() =>
+                window.open(
+                  "https://www.instagram.com/seoul.pearson/?hl=en",
+                  "_blank",
+                )
+              }
             >
               <Instagram className="mr-2 h-5 w-5" />
               Follow Updates
@@ -315,21 +352,25 @@ export default function Index() {
       <footer className="py-12 bg-muted/30">
         <div className="container mx-auto px-4 text-center">
           <div className="mb-8">
-            <h3 className="text-2xl font-bold text-primary mb-2">Pearson's AP Discord Server</h3>
-            <p className="text-muted-foreground">Empowering students to achieve AP excellence</p>
+            <h3 className="text-2xl font-bold text-primary mb-2">
+              Pearson's AP Discord Server
+            </h3>
+            <p className="text-muted-foreground">
+              Empowering students to achieve AP excellence
+            </p>
           </div>
           <div className="flex justify-center space-x-6 mb-8">
-            <a 
-              href="https://discord.gg/eYZuc6d3Sf" 
-              target="_blank" 
+            <a
+              href="https://discord.gg/eYZuc6d3Sf"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
             >
               <MessageSquare className="h-6 w-6" />
             </a>
-            <a 
-              href="https://www.instagram.com/seoul.pearson/?hl=en" 
-              target="_blank" 
+            <a
+              href="https://www.instagram.com/seoul.pearson/?hl=en"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
             >
@@ -337,7 +378,8 @@ export default function Index() {
             </a>
           </div>
           <p className="text-sm text-muted-foreground">
-            © 2024 Pearson's AP Discord Server. Made with ❤️ for students, by students.
+            © 2024 Pearson's AP Discord Server. Made with ❤️ for students, by
+            students.
           </p>
         </div>
       </footer>
