@@ -195,31 +195,26 @@ export default function Index() {
               Join thousands of students getting free, expert AP exam
               preparation from top-scoring tutors
             </p>
-            <div className="flex flex-col sm:flex-row justify-center items-center space-x-4">
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-6">
               <Button
                 size="lg"
-                className="text-lg px-8 py-6 group"
-                onClick={() =>
-                  window.open("https://discord.gg/eYZuc6d3Sf", "_blank")
-                }
+                className="text-lg px-8 py-6 group w-64"
+                onClick={() => window.open("https://discord.gg/eYZuc6d3Sf", "_blank")}
               >
-                <MessageSquare className="mr-2 h-5 w-5 group-hover:animate-pulse" />
-                Join Discord Server
-                <ExternalLink className="ml-2 h-4 w-4" />
+              <MessageSquare className="mr-2 h-5 w-5 group-hover:animate-pulse" />
+                Join Discord Now
+              <ExternalLink className="ml-2 h-4 w-4" />
               </Button>
               <Button
-                variant="outline"
                 size="lg"
-                className="text-lg px-8 py-6"
+                variant="outline"
+                className="text-lg px-8 py-6 group w-64"
                 onClick={() =>
-                  window.open(
-                    "https://www.instagram.com/seoul.pearson/?hl=en",
-                    "_blank",
-                  )
+                  window.open("https://www.instagram.com/seoul.pearson/?hl=en", "_blank")
                 }
               >
-                <Instagram className="mr-2 h-5 w-5" />
-                Follow on Instagram
+                <Instagram className="mr-2 h-5 w-5 group-hover:animate-pulse" />
+                  Follow on Instagram
                 <ExternalLink className="ml-2 h-4 w-4" />
               </Button>
             </div>
