@@ -20,31 +20,31 @@ const tutors = [
   {
     name: "Pearson Skibidy",
     subjects: ["AP Chemistry", "AP Biology"],
-    score: "5, 5",
+    score: "1, 1",
     description:
       "A bum with 0 years of experience",
     avatar: "PS",
   },
   {
-    name: "Marcus Johnson",
+    name: "Lebron James",
     subjects: ["AP Calculus AB/BC", "AP Physics"],
     score: "5, 5",
-    description: "MIT engineering student, math competition winner",
-    avatar: "MJ",
+    description: "The greatest of all time",
+    avatar: "LJ",
   },
   {
-    name: "Elena Rodriguez",
+    name: "Evil Pearson",
     subjects: ["AP English Lit", "AP World History"],
     score: "5, 5",
-    description: "Harvard English major, published writer",
-    avatar: "ER",
+    description: "Pearson but very, very evil",
+    avatar: "EP",
   },
   {
-    name: "David Kim",
+    name: "Evil Lebron",
     subjects: ["AP Computer Science", "AP Statistics"],
-    score: "5, 5",
-    description: "Carnegie Mellon CS student, coding bootcamp instructor",
-    avatar: "DK",
+    score: "1, 1",
+    description: "Lebron but very, very evil",
+    avatar: "EL",
   },
 ];
 
